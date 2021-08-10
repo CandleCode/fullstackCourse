@@ -1,0 +1,16 @@
+note over browser
+
+browser executes js code
+
+event handler prevents default handling of form submitting.
+
+event handler creates new note, adds it and renders it.
+
+end note
+
+
+
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+
+
+server-->browser: "message": "note created"
