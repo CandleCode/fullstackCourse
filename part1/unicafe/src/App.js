@@ -33,8 +33,8 @@ const Statistics = ({good, bad, neutral}) => {
                     <StatisticLine text="good" value={good}/>
                     <StatisticLine text="neutral" value={neutral}/>
                     <StatisticLine text="bad" value={bad}/>
-                    <StatisticLine text="average" value={getAverageScore(good, bad, neutral)}/>
-                    <StatisticLine text="positive" value={getPositivePercent(good, bad, neutral)+"%"}/>
+                    <StatisticLine text="average" value={getAverageScore(good, neutral, bad)}/>
+                    <StatisticLine text="positive" value={getPositivePercent(good, neutral, bad)+"%"}/>
                 </tbody>
             </table>
         )
