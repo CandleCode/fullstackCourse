@@ -5,19 +5,22 @@ const User = require('../models/user')
 
 
 blogsRouter.get('/', async (request, response) => {
+
     const blogs = await Blog.find({}).populate('user')
     response.json(blogs)
+
 })
 
 blogsRouter.post('/', async (request, response) => {
+    const user =  request.user
     const body = request.body
+
     if (!body.url || !body.title) return response.status(400).json('body must contain url or title')
-    if (!request.user) {
+    if (!user) {
         return response.status(401).json({ error: 'token missing'})
     }
 
-    const user = request.user
-
+    console.log('3')
     const blog = new Blog({
         title: body.title,
         author: body.author,
@@ -33,14 +36,14 @@ blogsRouter.post('/', async (request, response) => {
 })
 
 blogsRouter.delete('/:id', async (request, response) => {
+    const user =  request.user
     const blog = await Blog.findById(request.params.id)
     if (!blog) {
         return response.status(400).json({ error: 'blog was not found' })
     }
-    if (!request.user) {
+    if (!user) {
         return response.status(401).json({ error: 'token missing' })
     }
-    const user = await User.findById(request.user.id)
 
     if (!(user.id.toString() === blog.user.toString())) {
         return response.status(400).json({ error: 'only the user who created this blog can delete it'})
