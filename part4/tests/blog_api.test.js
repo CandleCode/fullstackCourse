@@ -6,7 +6,6 @@ const helper = require("./test_helper")
 const User = require('../models/user')
 
 
-
 beforeEach(async () => {
     await Blog.deleteMany({})
 
@@ -50,7 +49,7 @@ describe('post blog', () => {
         await api
             .post('/api/blogs')
             .send(newBlog)
-            .set({ 'Authorization': helper.initialUserToken })
+            .set({'Authorization': helper.initialUserToken})
             .expect(201)
             .expect('Content-Type', /application\/json/)
 
@@ -68,7 +67,7 @@ describe('post blog', () => {
         await api
             .post('/api/blogs')
             .send(newBlog)
-            .set({ 'Authorization': helper.initialUserToken })
+            .set({'Authorization': helper.initialUserToken})
             .expect(201)
             .expect('Content-Type', /application\/json/)
         const allBlogs = await helper.blogsInDb()
@@ -76,7 +75,7 @@ describe('post blog', () => {
     })
     test(' and verify that post returns 404 if title or url are not being sent', async () => {
         const newBlog = {
-            author:'test author',
+            author: 'test author',
         }
         await api
             .post('/api/blogs')
@@ -96,14 +95,14 @@ describe('post blog', () => {
     })
 })
 
-test.only('delete blog and check that it has been deleted', async () => {
+test('delete blog and check that it has been deleted', async () => {
     await api
         .delete(`/api/blogs/${helper.initialBlogs[0]._id}`)
-        .set({ 'Authorization': helper.initialUserToken })
+        .set({'Authorization': helper.initialUserToken})
         .expect(204)
     const allBlogs = await helper.blogsInDb()
     expect(allBlogs.length).toBe(5)
-},10000)
+}, 10000)
 
 test('update blog and check that it has been updated', async () => {
     const newBlog = {

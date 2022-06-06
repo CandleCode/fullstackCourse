@@ -16,7 +16,7 @@ const unknownEndpoint = (request, response) => {
 }
 
 const userExtractor = async (request, response, next) => {
-    const token =  request.token
+    const token = request.token
     if (token) {
         const decodedToken = jwt.verify(request.token, process.env.SECRET)
         if (!decodedToken.id) {
