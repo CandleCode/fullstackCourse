@@ -16,7 +16,7 @@ beforeEach(async () => {
     }
     await User.deleteMany({})
     let user = await new User(helper.initialUser)
-    user.save()
+    await user.save()
 
 }, 10000)
 
