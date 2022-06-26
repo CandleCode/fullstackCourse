@@ -1,0 +1,94 @@
+{
+  "notes": [
+    {
+      "content": "custom-hooks are great",
+      "id": 1
+    },
+    {
+      "content": "the best featrure ever <3",
+      "id": 2
+    },
+    {
+      "content": "test",
+      "id": 3
+    },
+    {
+      "content": "new poop!",
+      "id": 4
+    },
+    {
+      "content": "test",
+      "id": 5
+    },
+    {
+      "content": "new gold",
+      "id": 6
+    },
+    {
+      "content": "new gopld",
+      "id": 7
+    },
+    {
+      "content": "new",
+      "id": 8
+    },
+    {
+      "content": "new",
+      "id": 9
+    },
+    {
+      "content": "new",
+      "id": 10
+    },
+    {
+      "content": "adding",
+      "id": 11
+    },
+    {
+      "content": "new test",
+      "id": 12
+    }
+  ],
+  "persons": [
+    {
+      "name": "mluukkai",
+      "number": "040-5483923",
+      "id": 1
+    },
+    {
+      "name": "kaltsoon",
+      "number": "045-2323456",
+      "id": 2
+    },
+    {
+      "name": "name",
+      "number": "test",
+      "id": 3
+    },
+    {
+      "name": "new name",
+      "number": "343-345345",
+      "id": 4
+    },
+    {
+      "name": "getnew",
+      "number": "newget",
+      "id": 5
+    },
+    {
+      "name": "testing",
+      "number": "test",
+      "id": 6
+    },
+    {
+      "name": "a new",
+      "number": "test",
+      "id": 7
+    },
+    {
+      "name": "test ",
+      "number": "new 34",
+      "id": 8
+    }
+  ]
+}
